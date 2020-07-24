@@ -2,7 +2,7 @@ from clickhouse_driver import Client
 import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
-client = Client(host='ec2-3-16-148-63.us-east-2.compute.amazonaws.com', user='default', password='', port='9000', database='default')
+client = Client(host='ec1-2-34-567-89.us-east-2.compute.amazonaws.com', user='default', password='', port='9000', database='default')
 
 
 def get_scatter_plot(n_days, top_n, data=None):

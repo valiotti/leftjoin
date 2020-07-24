@@ -5,7 +5,7 @@ from get_plots import get_scatter_plot
 import pandas as pd
 from clickhouse_driver import Client
 
-client = Client(host='ec2-3-16-148-63.us-east-2.compute.amazonaws.com', user='default', password='', port='9000', database='default')
+client = Client(host='ec1-2-34-567-89.us-east-2.compute.amazonaws.com', user='default', password='', port='9000', database='default')
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
