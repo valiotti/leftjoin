@@ -1,0 +1,62 @@
+@font-face {
+        font-family: 'Noto Sans Regular';
+        font-style: normal;
+        font-weight: 200;
+        src: url('notosans/NotoSans-Regular.ttf');
+    }
+
+@font-face {
+        font-family: 'Noto Sans Bold';
+        font-style: bold;
+        font-weight: 200;
+        src: url('notosans/NotoSans-Bold.ttf');
+    }
+
+@font-face {
+        font-family: 'PT Sans';
+        font-style: normal;
+        font-weight: 200;
+        src: url('PTSans.ttf');
+    }
+
+@font-face {
+        font-family: 'Open Sans Regular';
+        font-style: normal;
+        font-weight: 200;
+        src: url('open-sans/OpenSans-Regular.ttf');
+    }
+
+
+
+
+
+
+
+@font-face {
+        font-family: 'Proxima Nova Light';
+        font-style: normal;
+        font-weight: 200;
+        src: url('proxima-nova/ProximaNova-Light.ttf');
+    }
+
+@font-face {
+        font-family: 'Proxima Nova Bold';
+        font-style: normal;
+        font-weight: 200;
+        src: url('proxima-nova/ProximaNova-Bold.otf');
+    }
+
+@font-face {
+        font-family: 'Proxima Nova Regular';
+        font-style: normal;
+        font-weight: 200;
+        src: url('proxima-nova/ProximaNova-Reg.otf');
+    }
+
+
+
+
+
+
+
+
