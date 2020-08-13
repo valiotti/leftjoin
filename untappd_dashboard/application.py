@@ -126,7 +126,7 @@ app.layout =  html.Div([
                             html.Br(),
                             html.H5("Пивоварни", style={'text-align':'center',
                                                         'text-transform': 'uppercase'}),
-                            html.Hr(), # dividing line
+                            html.Hr(), #  dividing line
 
                             dbc.Row(
                                 [
