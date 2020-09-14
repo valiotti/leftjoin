@@ -18,9 +18,7 @@ def check_name(name):
             return True
 
 queries = pd.read_csv('hh_data.csv')
-client_id = 'SGJM8REAS9BSB42EO7U38TQMNQK4EJ8DAQHCIP1230Q0LC9I61DUK4K4VKDDRCD8'
-client_secret = 'QA1QPETB02NQKHVQ50POQ1BQ7M72BLOHS9VG2M87G2EPIAVU072NT8H2MKVQJCI6'
-client = Client(host='54.227.137.142', user='default', password='', port='9000', database='headhunter')
+client = Client(host='', user='default', password='', port='9000', database='')
 
 while True:
     for query_type, level, direction, query_string in zip(queries['Тип'], queries['Уровень'], queries['Направление'], queries['Ключевое слово']):

@@ -5,7 +5,7 @@ import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-client = Client(host='54.227.137.142', user='default', password='', port='9000', database='headhunter')
+client = Client(host='', user='default', password='', port='9000', database='')
 creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
 gc = gspread.authorize(creds)
 
