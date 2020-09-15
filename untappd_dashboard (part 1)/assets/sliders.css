@@ -1,0 +1,31 @@
+/*.rc-slider-disabled{
+  background-color: #0097a7;
+}*/
+
+/*.rc.slider-handle-active:active {
+  border-color: red;
+}*/
+
+
+
+
+.rc-slider-handle{
+    border: solid 2px #ffcc00;
+}
+.rc-slider-handle:active {
+    border-color: #ffcc00;
+    box-shadow: 0 0 1px #ffcc00;
+}
+.rc-slider-handle:hover {
+    border-color: #ffcc00;
+}
+.rc-slider-handle:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 1px #ffcc00;
+}
+.rc-slider-track {
+    background-color: #ffcc00;
+}
+.rc-slider-dot-active {
+    border-color: #ffcc00;
+}
