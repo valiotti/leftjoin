@@ -155,7 +155,7 @@ app.layout =  html.Div([
                                 justify='center',
                             ),
                             html.Br(),
-                            html.H5("Venues and Regiions", style={'text-align':'center',
+                            html.H5("Venues and Regions", style={'text-align':'center',
                                                                   'text-transform': 'uppercase'}),
                             html.Hr(), # dividing line
                             # MAP
