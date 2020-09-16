@@ -50,7 +50,7 @@ def get_plot(n_days1=30, top_n1=100, data=None):
             SELECT
                 brewery_id,
                 stats_age_on_service
-            FROM brewery_info_new
+            FROM brewery_info
         ) AS t3 ON t1.brewery_id = t3.brewery_id
         GROUP BY 
             t1.brewery_id, 
