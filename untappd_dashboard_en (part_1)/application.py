@@ -21,13 +21,6 @@ client = Client(host='54.227.137.142',
                 port='9000',
                 database='untappd')
 
-flatten = lambda l: [item for sublist in l for item in sublist]
-
-sorts = flatten(client.execute('''
-SELECT beer_style FROM beers
-GROUP BY beer_style
-'''))
-
 colors = ['#ffcc00', # золотой header
           '#f5f2e8', # background main
           '#f8f3e3', # card main
