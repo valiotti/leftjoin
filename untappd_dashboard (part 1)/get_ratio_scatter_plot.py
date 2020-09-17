@@ -4,11 +4,11 @@ import plotly.graph_objects as go
 import numpy as np
 
 
-client = Client(host='ec2-3-16-148-63.us-east-2.compute.amazonaws.com',
+client = Client(host='54.227.137.142',
                 user='default',
                 password='',
                 port='9000',
-                database='default')
+                database='untappd')
 
 
 def get_plot(n_days1=30, top_n1=100, data=None):
@@ -50,7 +50,7 @@ def get_plot(n_days1=30, top_n1=100, data=None):
             SELECT
                 brewery_id,
                 stats_age_on_service
-            FROM brewery_info_new
+            FROM brewery_info
         ) AS t3 ON t1.brewery_id = t3.brewery_id
         GROUP BY 
             t1.brewery_id, 

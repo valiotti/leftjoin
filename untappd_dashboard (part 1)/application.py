@@ -15,18 +15,11 @@ app = dash.Dash(__name__, external_stylesheets=[standard_BS])
 app.scripts.config.serve_locally = True
 app.css.config.serve_locally = True
 
-client = Client(host='ec2-3-16-148-63.us-east-2.compute.amazonaws.com',
+client = Client(host='54.227.137.142',
                 user='default',
                 password='',
                 port='9000',
-                database='default')
-
-flatten = lambda l: [item for sublist in l for item in sublist]
-
-sorts = flatten(client.execute('''
-SELECT beer_style FROM beers
-GROUP BY beer_style
-'''))
+                database='untappd')
 
 colors = ['#ffcc00', # золотой header
           '#f5f2e8', # background main

@@ -3,7 +3,12 @@ import pandas as pd
 import plotly.graph_objects as go
 import json
 
-client = Client(host='ec2-3-16-148-63.us-east-2.compute.amazonaws.com', user='default', password='', port='9000', database='default')
+client = Client(host='54.227.137.142',
+                user='default',
+                password='',
+                port='9000',
+                database='untappd')
+
 
 with open('russia.json') as russian_geojson:
     counties = json.load(russian_geojson)
@@ -15,7 +20,7 @@ def get_map():
     (
         SELECT beer_id, region_name, region_id, rating_score
         FROM beer_reviews AS t1
-        ANY LEFT JOIN (SELECT venue_id, region_id, region_name FROM venues2) AS t2 ON t1.venue_id = t2.venue_id 
+        ANY LEFT JOIN (SELECT venue_id, region_id, region_name FROM venues) AS t2 ON t1.venue_id = t2.venue_id 
         GROUP BY beer_id, venue_id, region_id, region_name, rating_score
     )
     GROUP BY region_name, region_id
@@ -33,7 +38,7 @@ def get_map():
                                                     [1, 'rgb(34, 150, 79)']],
                                         colorbar_thickness=20,
                                         hovertemplate='<b>%{text}</b>' + '<br>' +
-                                                      'Средняя оценка пива: %{z}' +
+                                                      'Average beer rating: %{z}' +
                                                       '<extra></extra>',
                                         hoverinfo='text, z'
                                         ))
