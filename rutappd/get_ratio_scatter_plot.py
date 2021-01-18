@@ -78,6 +78,7 @@ def get_plot(n_days1=30, top_n1=100, data=None):
 
 
 
+        # brewery_name_and_beer_count.append(f'{name},<br>количество сортов пива: {beer_count}')
     scatter_plot_df_with_age['name_count'] = brewery_name_and_beer_count
     dict_list = list()
     dict_list.append(dict(type="line",
@@ -180,6 +181,7 @@ def get_plot(n_days1=30, top_n1=100, data=None):
         name='4 – 6',
         mode='markers',
         opacity=0.85,
+        # marker_color='rgb(76, 120, 168)',
         text=scatter_plot_df_1.name_count,
         marker_size=scatter_plot_df_1.bucket_beer_count,
         textfont={"family": "Proxima Nova Regular",
@@ -193,6 +195,7 @@ def get_plot(n_days1=30, top_n1=100, data=None):
         name='6 – 8',
         mode='markers',
         opacity=0.85,
+        # marker_color='rgb(245, 133, 23)',
         text=scatter_plot_df_2.name_count,
         marker_size=scatter_plot_df_2.bucket_beer_count,
         textfont={"family": "Proxima Nova Regular",
@@ -215,6 +218,11 @@ def get_plot(n_days1=30, top_n1=100, data=None):
     ))
 
     fig.update_layout(
+        #title=f"за последние {n_days1} дней, топ-{top_n1} пивоварен",
+        # font={
+        #     'family': 'Open Sans Regular',
+        #     'color': 'black',
+        #     'size': 12
         font={
                 'family': 'Proxima Nova Regular',
                 'color': 'black',
@@ -226,6 +234,8 @@ def get_plot(n_days1=30, top_n1=100, data=None):
         xaxis_title="КОЛИЧЕСТВО ОТЗЫВОВ",
         legend_title_text='Возраст пивоварни<br>на Untappd, лет:',
         shapes=dict_list,
+        #width=450,
+        #height=550,
         annotations=annotations_list,
         margin={"r": 0, "t": 0, "l": 0, "b": 0},
         transition_duration=500

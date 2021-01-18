@@ -1,74 +1,45 @@
 НАЗВАНИЕ,ГОРОД,РЕЙТИНГ,ИЗМЕНЕНИЕ,ЧЕКИНОВ
-Trigger,Воронеж,5.0,–,1
-Vodolaz Brewery,Воронеж,4.5,–,1
-Rock'n'Beer,Воронеж,4.5,↑ +33,1
-DIETA / ДИЕТА,Воронеж,4.42,↑ +4,3
-Red Button Brewery,Воронеж,4.25,↑ +32,3
-Заповедник,Воронеж,4.25,–,1
-GAS Brew,Воронеж,4.25,–,1
-Wild Lab,Воронеж,4.16,↑ +4,8
-Stamm Brewing,Воронеж,4.12,↑ +7,10
-Régulier By Double A,Воронеж,4.12,–,2
-Appleton Ciders,Воронеж,4.12,–,2
-Moscow Brewing Company (Московская Пивоваренная Компания),Воронеж,4.08,↑ +6,3
-Пивоварня Чаща / Thicket Brewery,Воронеж,4.04,↓ -2,6
-4BREWERS,Воронеж,4.04,↓ -13,6
-Big Village Brewery,Воронеж,4.04,↑ +6,14
-Lovecraft Weird Brewery,Воронеж,4.0,↑ +17,1
-Vasileostrovskaya Brewery (Василеостровская Пивоварня),Воронеж,4.0,↓ -13,1
-Лось и Кедр (Moose & Cedar),Воронеж,4.0,↑ +11,1
-Та-Та,Воронеж,4.0,–,2
-Black Cat Brewery,Воронеж,4.0,–,1
-CHIBIS Brewery,Воронеж,3.95,↑ +2,5
-Jaws Brewery,Воронеж,3.95,↓ -9,5
-LiS Brew,Воронеж,3.91,–,8
-Brewmen,Воронеж,3.9,↑ +16,5
-Selfmade Brewery,Воронеж,3.89,↓ -10,9
-Ostrovica,Воронеж,3.83,↓ -16,3
-Steppe & Wind Meadery (Степь и Ветер),Воронеж,3.81,–,4
-COVEN Brewery,Воронеж,3.8,↓ -8,5
-Salden's Brewery,Воронеж,3.79,↓ -15,7
-Hophead Brewery,Воронеж,3.78,↑ +11,9
-Brewlok Brewery,Воронеж,3.76,↓ -5,66
-Hausmann Brewery,Воронеж,3.75,–,5
-Crazy Brew,Воронеж,3.75,–,1
-Gletcher Brewery (Глетчер),Воронеж,3.75,↓ -9,1
-Zavod,Воронеж,3.75,↓ -33,1
-Solbirs Brewery,Воронеж,3.67,–,3
-ТАРКОС (TARKOS),Воронеж,3.67,↑ +13,15
-Panzer Brewery,Воронеж,3.66,↑ +11,8
-Wolf's Brewery (Волковская Пивоварня),Воронеж,3.62,↑ +4,2
-Happy Brew,Воронеж,3.58,–,3
-Atmosphere Brewery,Воронеж,3.5,–,1
-Bakunin Brewing Co.,Воронеж,3.5,↓ -23,9
-Zagovor Brewery,Воронеж,3.5,↓ -15,3
-Plan B Brewery,Воронеж,3.5,↓ -17,12
-Alaska Brewery,Воронеж,3.46,↓ -11,7
-Pivot Point,Воронеж,3.42,↓ -29,6
-AF Brew,Воронеж,3.34,↓ -25,22
-Schwarz Kaiser Brewery,Воронеж,3.3,↓ -18,5
-Lipetskpivo (Липецкпиво),Voronezh,3.25,–,1
-Baltika Breweries (Балтика),Воронеж,3.25,–,3
-Augustine (Августин),Воронеж,3.25,↓ -46,3
-Pivovarenny Zavod Lyskovsky (Пивоваренный Завод Лысковский),Воронеж,3.25,–,2
-Ochakovo (Очаково),Воронеж,3.25,–,2
-Rewort Brewery,Воронеж,3.19,↓ -23,9
-ТАРКОС BREWLAB,Воронеж,3.19,↓ -23,4
-Sabotage,Воронеж,3.04,↓ -17,6
-Krop-Pivo (Кроп-Пиво),Воронеж,3.0,–,1
-Ravencraft,Воронеж,3.0,–,1
-Tihoretsky Pivovarenny Zavod (Тихорецкий Пивоваренный Завод),Воронеж,3.0,–,1
-Vyatich (Вятич),Воронеж,3.0,–,1
-Zavod Pivovarenny Morshansky (Завод Пивоваренный Моршанский),Воронеж,3.0,–,2
-New Riga's Brewery,Воронеж,3.0,↓ -17,1
-Lux In Tenebris,Воронеж,3.0,–,2
-Los Pivnos Brewery,Воронеж,3.0,↓ -11,1
-Varyag Brewery (Пивоварня Варяг),Воронеж,3.0,↓ -62,1
-Tomskoe Pivo (Томское Пиво),Воронеж,3.0,–,1
-Konix Brewery,Воронеж,2.75,↓ -32,3
-Craft Brew Riots,Воронеж,2.38,–,2
-XP Brew,Воронеж,2.0,–,1
-Yablochny Spas (Яблочный Спас),Воронеж,2.0,↓ -22,1
-Zavod Trehsosensky (Завод Трехсосенский),Воронеж,1.5,–,1
-AB InBev Efes,Воронеж,0.0,–,1
-Chester's,Воронеж,0.0,–,1
+Double A Brewing,Воронеж,4.5,–,1
+Steppe & Wind Meadery (Степь и Ветер),Воронеж,4.33,–,3
+Rock'n'Beer,Воронеж,4.25,–,1
+Brew Division,Воронеж,4.25,↑ +19,1
+Big Village Brewery,Воронеж,4.25,–,18
+DaDa Cider,Воронеж,4.25,↑ +2,1
+Hophead Brewery,Воронеж,4.23,↑ +9,12
+Stamm Brewing,Воронеж,4.1,–,5
+Пивоварня Чаща / Thicket Brewery,Воронеж,4.08,↑ +11,3
+XP Brew,Воронеж,4.08,–,3
+Brewlok Brewery,Воронеж,4.01,–,19
+Knightberg,Воронеж,4.0,↓ -10,1
+Zagovor Brewery,Воронеж,4.0,–,7
+Wild Lab,Воронеж,4.0,–,1
+Jaws Brewery,Воронеж,4.0,–,3
+BrewT!,Воронеж,4.0,–,1
+4BREWERS,Воронеж,3.96,–,12
+Nuclear Brewery,Воронеж,3.88,–,2
+Selfmade Brewery,Воронеж,3.82,–,17
+Red Button Brewery,Воронеж,3.81,–,4
+Rewort Brewery,Voronezh,3.75,–,1
+CHIBIS Brewery,Воронеж,3.75,↓ -11,3
+Paradox,Воронеж,3.75,↓ -22,1
+Konix Brewery,Voronezh,3.75,–,1
+Brew Fiction,Воронеж,3.75,–,1
+AF Brew,Воронеж,3.69,–,4
+Salden's Brewery,Воронеж,3.62,–,10
+Konix Brewery,Воронеж,3.58,–,3
+Dogma,Воронеж,3.5,↑ +8,1
+ТАРКОС (TARKOS),Воронеж,3.5,–,1
+Hausmann Brewery,Воронеж,3.5,↓ -16,1
+Atmosphere Brewery,Воронеж,3.38,–,2
+LiS Brew,Воронеж,3.25,↑ +7,6
+Plan B Brewery,Воронеж,3.22,–,8
+Gletcher Brewery (Глетчер),Воронеж,3.12,–,4
+Zavod Trehsosensky (Завод Трехсосенский),Воронеж,3.12,↑ +8,2
+Schwarz Kaiser Brewery,Воронеж,3.12,–,2
+BANDARLOG Brewery,Воронеж,3.0,–,1
+Brewmen,Воронеж,3.0,↓ -4,1
+Lux In Tenebris,Воронеж,3.0,–,1
+Solbirs Brewery,Воронеж,2.96,↓ -23,7
+ТАРКОС BREWLAB,Воронеж,2.5,↓ -8,4
+Rewort Brewery,Воронеж,2.21,–,6
+Ostrovica,Воронеж,0.0,↓ -40,1

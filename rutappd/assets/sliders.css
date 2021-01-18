@@ -1,3 +1,14 @@
+/*.rc-slider-disabled{
+  background-color: #0097a7;
+}*/
+
+/*.rc.slider-handle-active:active {
+  border-color: red;
+}*/
+
+
+
+
 .rc-slider-handle{
     border: solid 2px #ffcc00;
 }

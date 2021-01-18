@@ -1,5 +1,7 @@
 import dash_table
 import pandas as pd
+# from get_data_bars import data_bars
+# from reload_data import get_data_best_sorts
 import dash_bootstrap_components as dbc
 from clickhouse_driver import Client
 import requests
@@ -25,19 +27,39 @@ city_names = {
     'Nizhniy Novgorod': 'Нижний Новгород',
 }
 
+all_cities_dict_en = {'Москва': 'Moscow',
+                'Сергиев Посад': 'Sergiev Posad',
+                'Санкт-Петербург': 'Saint Petersburg',
+                'Владимир': 'Vladimir',
+                'Красная Пахра': 'Red Pakhra',
+                'Воронеж': 'Voronezh',
+                'Екатеринбург': 'Yekaterinburg',
+                'Ярославль': 'Yaroslavl',
+                'Казань': 'Kazan',
+                'Ростов-на-Дону': 'Rostov-on-Don',
+                'Краснодар': 'Krasnodar',
+                'Тула': 'Tula',
+                'Курск': 'Kursk',
+                'Пермь': 'Perm',
+                'Нижний Новгород': 'Nizhnij Novgorod',
+                }
+
+
 def get_top_russian_breweries_table(venue_city, checkins_n=250):
     if venue_city == None: # TOP RUSSIAN BREWERIES -> CLICKHOUSE
         selected_df = get_top_russian_breweries(checkins_n)
     else: # BY CITY -> LOCAL
+        print(f'GETTING TOP RUSSIAN BREWERIES TABLE FOR {venue_city}')
         ru_city = venue_city
-        if ru_city == 'Санкт-Петербург':
-            en_city = 'Saint Petersburg'
-        elif ru_city == 'Нижний Новгород':
-            en_city = 'Nizhnij Novgorod'
-        elif ru_city == 'Пермь':
-            en_city = 'Perm'
-        else:
-            en_city = translator.translate(ru_city, dest='en').text
+        # if ru_city == 'Санкт-Петербург':
+        #     en_city = 'Saint Petersburg'
+        # elif ru_city == 'Нижний Новгород':
+        #     en_city = 'Nizhnij Novgorod'
+        # elif ru_city == 'Пермь':
+        #     en_city = 'Perm'
+        # else:
+        #     en_city = translator.translate(ru_city, dest='en').text
+        en_city = all_cities_dict_en[ru_city]
         # best_city_breweries
         df = pd.read_csv(f'data/cities/{en_city}.csv')      # EN
         df = df.loc[df['ЧЕКИНОВ'] >= checkins_n]
@@ -45,13 +67,16 @@ def get_top_russian_breweries_table(venue_city, checkins_n=250):
         # # MAPPING & CLEANINF DUPLICATES
         df['ГОРОД'] = df['ГОРОД'].map(lambda x: city_names[x] if (x in city_names) else x) # MAPPING
 
+        # df = pd.read_csv(f'data/cities/{venue_city}.csv') # RU
         df.drop_duplicates(subset=['НАЗВАНИЕ', 'ГОРОД'], keep='first', #REMOVING DUPLICATES # lastly
-                                    inplace=True)  # keep 1st duplicate row in a df ???
+                                    inplace=True)  # keep 1st duplicate row in a df
 
         df.insert(0, 'МЕСТО',
                            list('🏆 ' + str(i) if i in [1, 2, 3] else str(i) for i in range(1, len(df) + 1)))
 
         selected_df = df.head(10)
+        # print('selection done!')
+
 
 
     table = dbc.Table.from_dataframe(selected_df, striped=False,
@@ -71,6 +96,7 @@ def get_top_russian_breweries_table(venue_city, checkins_n=250):
 
 # ALL-RUSSIAN BREWERIES
 def get_top_russian_breweries(checkins_n=250):
+    print('GET_TOP_RUSSIAN_BREWERIES')
     top_n_brewery_today = client.execute(f'''
        SELECT  rt.brewery_id,
                rt.brewery_name, 
@@ -197,6 +223,26 @@ def get_best_beer_sorts_table_1(checkins_n=250):
     return table
 
 
+# def get_best_beer_sorts_table_1(sort_list=None):
+#     if sort_list is None:
+#         df_table_top_beers = pd.read_csv('data/top_best_beers.csv')
+#     else:
+#         df_table_top_beers = get_data_best_sorts(sort_list)
+#
+#     table = dbc.Table.from_dataframe(df_table_top_beers, striped=False,
+#                                      bordered=False, hover=True,
+#                                      size='sm',
+#                                      style={'background-color': '#ffffff',
+#                                            'font-family': 'Proxima Nova Regular',
+#                                            'text-align': 'center',
+#                                            'fontSize': '12px'},
+#                                      className='table borderless'
+#
+#                                      )
+#
+#     return table
+
+
 def get_worst_beer_sorts_table_1(checkins_n=250):
     df = pd.read_csv(f'data/top_worst_beers.csv')
     selected_df = df.loc[df['ЧЕКИНОВ'] >= checkins_n].head(10)
@@ -223,15 +269,15 @@ def get_worst_beer_sorts_table_1(checkins_n=250):
 # UPDATING TABLES
 def update_best_breweries(venue_city):
     ru_city = venue_city
-    if ru_city == 'Санкт-Петербург':
-        en_city = 'Saint Petersburg'
-    elif ru_city == 'Нижний Новгород':
-        en_city = 'Nizhnij Novgorod'
-    elif ru_city == 'Пермь':
-        en_city = 'Perm'
-    else:
-        en_city = translator.translate(ru_city, dest='en').text
-
+    # if ru_city == 'Санкт-Петербург':
+    #     en_city = 'Saint Petersburg'
+    # elif ru_city == 'Нижний Новгород':
+    #     en_city = 'Nizhnij Novgorod'
+    # elif ru_city == 'Пермь':
+    #     en_city = 'Perm'
+    # else:
+    #     en_city = translator.translate(ru_city, dest='en').text
+    en_city = all_cities_dict_en[ru_city]
     print(ru_city, en_city)
     top_n_brewery_today = client.execute(f'''
     SELECT  rt.brewery_id,
@@ -532,7 +578,17 @@ def update_worst_beers():
 
 
 
+# UPDATE BEFORE RERUN
+# all_cities = sorted(['Москва', 'Сергиев Посад', 'Санкт-Петербург', 'Владимир',
+#               'Красная Пахра', 'Воронеж', 'Екатеринбург', 'Ярославль', 'Казань',
+#               'Ростов-на-Дону', 'Краснодар', 'Тула', 'Курск', 'Пермь', 'Нижний Новгород'])
 
+# for city in all_cities:
+#     update_best_breweries(city)
+# print(f'Breweries Table updated at {current_time}')
+# Updating beers
+# update_best_beers()
+# update_worst_beers()
 
 
 
