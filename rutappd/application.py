@@ -25,6 +25,7 @@ client = Client(host='',
                 port='',
                 database='')
 
+
 all_cities = sorted(['Москва', 'Сергиев Посад', 'Санкт-Петербург', 'Владимир',
               'Красная Пахра', 'Воронеж', 'Екатеринбург', 'Ярославль', 'Казань',
               'Ростов-на-Дону', 'Краснодар', 'Тула', 'Курск', 'Пермь', 'Нижний Новгород'])
@@ -108,6 +109,7 @@ scatter_and_controls = dbc.Card(
     [
         dbc.CardBody(
             [
+                # html.P(id="scatter_header"),
                 html.H6(id="scatter_header",
                         className="card-title",
                         style={'text-transform': 'uppercase'}),
@@ -190,6 +192,8 @@ checkins_slider_tab_1 = dbc.CardBody(
                             dbc.FormGroup(
                                 [
                                     html.H6('Количество чекинов', style={'text-align': 'center'}),
+                                    # dbc.Label("Чекины", style={'text-align': 'center', 'font-size': '100%'}
+                                    # ),
                                     dcc.Slider(
                                         id='checkin_n_tab_1',
                                         min=0,
@@ -197,7 +201,8 @@ checkins_slider_tab_1 = dbc.CardBody(
                                         step=25,
                                         value=250,  # initial value
                                         loading_state={'is_loading': True},
-                                        marks={i: i for i in list(range(0, 251, 25))}
+                                        marks={i: i for i in list(range(0, 251, 25))},
+                                        # marks={i: i for i in list(range(10, 51, 5))},
                                     ),
                                 ],
                             ),
@@ -405,6 +410,7 @@ def tab_content(active_tab, checkin_slider_2, checkin_slider_3):
 )
 def table_content(city, checkin_n):
     print(city, checkin_n) # if city==None the func returns all-russian breweries rating
+    # print(f'GETTING TOP RUSSIAN BREWERIES TABLE FOR {city}')
     return get_top_russian_breweries_table(city, checkin_n)
 
 # Scatter Header
@@ -415,29 +421,42 @@ def scatter_header(slider_value):
     print(slider_value)
     return f"Отношение количества отзывов к средней оценке пивоварни за последние {slider_value} дней" # children
 
-
-
 application = app.server
 
 #-----------------------------------------------------------------------------------------------------------------------
 # UPDATING DATA
 from get_tables import update_best_breweries, update_best_beers, update_worst_beers
+# from datetime import datetime
 
 # Scheduling
 scheduler = BackgroundScheduler()
-@scheduler.scheduled_job('cron', hour=16, minute=45, misfire_grace_time=10) # sec
+@scheduler.scheduled_job('cron', hour=16, misfire_grace_time=45) # sec
 def update_data():
+    # current_time = datetime.now().time()
+    # print(f'START UPDATING DATA AT {current_time}')
+    # Updating breweries table
     for city in all_cities:
         update_best_breweries(city)
+    # print(f'Breweries Table updated at {current_time}')
+    # Updating beers
     update_best_beers()
     update_worst_beers()
 
-
 scheduler.start()
+
+
+
 #-----------------------------------------------------------------------------------------------------------------------
 
 if __name__ == '__main__':
     application.run(debug=True, port=8020)
+    # help(dcc.Loading)
+
+
+
+
+
+
 
 
 

@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import json
 
 
-client = Client(host=',
+client = Client(host='',
                 user='',
                 password='',
                 port='',
